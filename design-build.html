@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design & Build Services | Amruthadhara Infra</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Integrated design and construction services - Seamless project delivery from concept to completion with Amruthadhara Infra.">
+    <meta name="keywords" content="Design & Build, Integrated Construction, Architectural Design, Construction Management, Civil Engineering">
+    <meta name="author" content="Amruthadhara Infra">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#051025',     /* Deepest Blue */
+                            blue: '#0a2558',     /* Primary Blue */
+                            cyan: '#00b4d8',     /* Waterfall Highlight */
+                            light: '#e0f2fe',    /* Light Cyan Tint */
+                            silver: '#e2e8f0',   /* Metallic Light */
+                            metal: '#64748b',    /* Metallic Dark */
+                            chrome: '#f8fafc'    /* Shine */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'waterfall': 'linear-gradient(to right, #00b4d8, #0077b6)',
+                        'hero-overlay': 'linear-gradient(to right, rgba(5, 16, 37, 0.9), rgba(5, 16, 37, 0.4))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 180, 216, 0.15)',
+                        'glow-strong': '0 0 30px rgba(0, 180, 216, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(5, 16, 37, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #051025; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b4d8; }
+
+        .nav-link.active {
+            color: #00b4d8 !important;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        /* Shine Effect for Buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .btn-shine:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+        
+        /* Process Timeline */
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00b4d8, #0a2558);
+        }
+        .step-number {
+            position: absolute;
+            left: -1.25rem;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #0a2558;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #00b4d8;
+        }
+        
+        /* Feature Card Hover */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+        }
+        
+        /* Integration Diagram */
+        .integration-node {
+            position: relative;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .integration-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
+        }
+        .connector-line {
+            height: 2px;
+            background: linear-gradient(90deg, #00b4d8, #0a2558);
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5 glass-dark">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="version9.html" class="text-2xl font-bold flex items-center gap-3 group z-50">
+                <div class="relative h-10 md:h-12 w-auto transition-transform group-hover:scale-105 duration-300">
+                    <img src="images/logo.png" alt="Amruthadhara Infra Logo" 
+                         class="h-10 md:h-12 w-auto object-contain drop-shadow-md"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hidden h-10 w-10 bg-gradient-to-br from-slate-100 to-slate-300 rounded items-center justify-center text-brand-navy text-xl">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-2xl font-display tracking-tight text-white group-hover:text-brand-cyan transition-colors">Amruthadhara</span>
+                    <span class="text-[8px] md:text-[10px] tracking-[0.3em] text-brand-cyan uppercase font-light group-hover:text-white transition-colors">Infra</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="btn-shine bg-waterfall text-white px-7 py-2.5 rounded-sm hover:shadow-glow-strong transition-all font-semibold text-sm uppercase tracking-wider transform hover:-translate-y-0.5">
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none p-2 hover:text-brand-cyan transition-colors z-50 relative" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden glass-dark border-t border-white/10 overflow-hidden max-h-0 transition-all duration-300 ease-in-out absolute top-full left-0 w-full shadow-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Home</a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Services</a>
+                <a href="version9.html#projects" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Projects</a>
+                <a href="#contact" class="text-brand-cyan font-bold mobile-link block py-4 border border-brand-cyan/30 rounded mt-2 bg-brand-navy/50 active:bg-brand-navy/80">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-medium mb-6 text-brand-cyan shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Integrated Solutions
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-display tracking-tight drop-shadow-2xl">
+                    Design <span class="text-transparent bg-clip-text bg-waterfall">& Build</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-6 max-w-2xl mx-auto font-light leading-relaxed">
+                    Seamlessly integrated design and construction under one coordinated process
+                </p>
+                <a href="#integration" class="inline-flex items-center gap-2 text-white border border-white/30 px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                    <i class="fa-solid fa-arrow-down"></i> See How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-100 py-3 border-b border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm">
+                <a href="version9.html" class="text-slate-500 hover:text-brand-cyan transition-colors"><i class="fa-solid fa-home"></i> Home</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <a href="version9.html#services" class="text-slate-500 hover:text-brand-cyan transition-colors">Services</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <span class="text-brand-navy font-medium">Design & Build</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-20">
+        <div class="container mx-auto px-6">
+            <!-- Intro Section -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+                    Seamlessly Integrated <span class="text-brand-cyan">Design and Construction</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-8"></div>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Our Design & Build approach bridges the gap between architectural vision and practical execution. By involving our construction team early in the design phase, we eliminate coordination gaps, reduce rework, and deliver projects faster and more efficiently.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    We combine creative design thinking with engineering discipline to create buildings that are not only beautiful but also buildable, cost-effective, and sustainable.
+                </p>
+            </div>
+
+            <!-- Integration Diagram -->
+            <div id="integration" class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">The Integrated Approach</h3>
+                
+                <div class="hidden md:flex flex-col items-center mb-12">
+                    <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl">
+                        <div class="integration-node mb-8 md:mb-0 text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                                <i class="fa-solid fa-lightbulb text-2xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Concept Design</h4>
+                            <p class="text-slate-600 text-sm">Architectural vision meets client needs</p>
+                        </div>
+                        
+                        <div class="connector-line w-12 h-2 my-4 md:my-0 md:w-24 md:h-2"></div>
+                        
+                        <div class="integration-node mb-8 md:mb-0 text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                                <i class="fa-solid fa-ruler-combined text-2xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Technical Detailing</h4>
+                            <p class="text-slate-600 text-sm">Engineering precision and constructability</p>
+                        </div>
+                        
+                        <div class="connector-line w-12 h-2 my-4 md:my-0 md:w-24 md:h-2"></div>
+                        
+                        <div class="integration-node text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                                <i class="fa-solid fa-hammer text-2xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Execution</h4>
+                            <p class="text-slate-600 text-sm">Coordinated construction delivery</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile View -->
+                <div class="md:hidden space-y-8 mb-12">
+                    <div class="integration-node text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-lightbulb text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-2">Concept Design</h4>
+                        <p class="text-slate-600 text-sm">Architectural vision meets client needs</p>
+                    </div>
+                    
+                    <div class="integration-node text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-ruler-combined text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-2">Technical Detailing</h4>
+                        <p class="text-slate-600 text-sm">Engineering precision and constructability</p>
+                    </div>
+                    
+                    <div class="integration-node text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-hammer text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-2">Execution</h4>
+                        <p class="text-slate-600 text-sm">Coordinated construction delivery</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-brand-light to-white rounded-xl p-6 md:p-8 border border-slate-200">
+                    <p class="text-center text-brand-navy font-medium">
+                        <i class="fa-solid fa-arrow-right-arrow-left text-brand-cyan mr-2"></i>
+                        Continuous feedback loop between design and construction teams
+                    </p>
+                </div>
+            </div>
+
+            <!-- Key Benefits -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Key Benefits</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Benefit 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-user-tie text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Single-Point Responsibility</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            One team accountable for both design and construction, eliminating coordination gaps and finger-pointing.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-clock text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Faster Delivery</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Parallel processes and early construction input reduce project timelines by up to 30%.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-indian-rupee-sign text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Cost Certainty</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Early cost estimation and value engineering prevent budget overruns and unexpected expenses.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Reduced Risk</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Constructability reviews identify potential issues before construction begins, minimizing rework.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-lightbulb text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Innovative Solutions</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Collaborative approach fosters creative, buildable solutions that are cost-effective and practical.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-comments text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Better Communication</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Direct communication between designers and builders ensures clarity and quick decision-making.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrated Process -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our 5-Phase Integrated Process</h3>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Phase 1 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">1</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Concept Development & Site Analysis</h4>
+                        <p class="text-slate-600 mb-4">
+                            We begin with understanding your vision, site conditions, and functional requirements. Our design and construction teams collaborate from day one.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Client needs assessment and vision alignment</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Comprehensive site survey and analysis</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Initial design concepts with construction feasibility review</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Phase 2 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">2</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Technical Detailing & Value Engineering</h4>
+                        <p class="text-slate-600 mb-4">
+                            Detailed designs are developed with continuous input from our construction team to ensure practicality and cost-effectiveness.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Architectural and structural detailing</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Material selection based on availability and cost</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Value engineering to optimize design and costs</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Phase 3 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">3</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Constructability Review</h4>
+                        <p class="text-slate-600 mb-4">
+                            Before finalizing designs, our construction experts review every element for buildability, sequencing, and potential challenges.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Construction methodology planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Identification of potential construction challenges</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Design optimization for efficient construction</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Phase 4 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">4</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Coordinated Execution</h4>
+                        <p class="text-slate-600 mb-4">
+                            Construction begins with the design team remaining actively involved to address questions and make real-time adjustments.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Design team available for site consultations</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Continuous design support during construction</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Real-time design modifications as needed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Phase 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Continuous Optimization & Handover</h4>
+                        <p class="text-slate-600 mb-4">
+                            Throughout construction, we refine and optimize based on site feedback, ensuring the final product exceeds expectations.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Ongoing design refinements based on construction progress</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Quality assurance aligned with design intent</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Complete documentation and operational handover</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specializations -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our Specializations</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Specialization 1 -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa-solid fa-building text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Commercial Buildings</h4>
+                                <p class="text-slate-600 text-sm mb-3">Office complexes, retail spaces, hotels, and mixed-use developments designed for functionality and aesthetics.</p>
+                                <ul class="space-y-1 text-slate-600 text-xs">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Corporate office buildings</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Shopping complexes and malls</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Hospitality projects</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Specialization 2 -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa-solid fa-industry text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Industrial Facilities</h4>
+                                <p class="text-slate-600 text-sm mb-3">Factories, warehouses, and manufacturing units optimized for workflow efficiency and safety.</p>
+                                <ul class="space-y-1 text-slate-600 text-xs">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Manufacturing plants</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Warehouses and logistics hubs</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Processing units</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Specialization 3 -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa-solid fa-school text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Institutional Buildings</h4>
+                                <p class="text-slate-600 text-sm mb-3">Schools, hospitals, and community centers designed for public use and community benefit.</p>
+                                <ul class="space-y-1 text-slate-600 text-xs">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Educational institutions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Healthcare facilities</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Community centers</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Specialization 4 -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fa-solid fa-city text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Mixed-Use Developments</h4>
+                                <p class="text-slate-600 text-sm mb-3">Integrated projects combining residential, commercial, and recreational spaces.</p>
+                                <ul class="space-y-1 text-slate-600 text-xs">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Residential-commercial complexes</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Township development</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                        <span>Urban redevelopment projects</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traditional vs Integrated Comparison -->
+            <div class="bg-gradient-to-br from-brand-light to-white rounded-xl p-8 md:p-12 mb-20 border border-slate-200">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Traditional vs. Design & Build</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-brand-navy text-white">
+                                <th class="p-4 text-left">Aspect</th>
+                                <th class="p-4 text-left border-l border-white/20">Traditional Approach</th>
+                                <th class="p-4 text-left border-l border-white/20">Design & Build Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b border-slate-200">
+                                <td class="p-4 font-medium text-brand-navy">Responsibility</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Separate design and construction contracts</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Single contract and responsibility</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-slate-200">
+                                <td class="p-4 font-medium text-brand-navy">Coordination</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Multiple parties to coordinate</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Integrated team from start</td>
+                            </tr>
+                            <tr class="bg-white border-b border-slate-200">
+                                <td class="p-4 font-medium text-brand-navy">Timeline</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Sequential process (design then build)</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Parallel processes (overlap design and build)</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-slate-200">
+                                <td class="p-4 font-medium text-brand-navy">Cost Control</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Design completed before cost certainty</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Cost certainty early in design phase</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-4 font-medium text-brand-navy">Communication</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Multiple communication channels</td>
+                                <td class="p-4 border-l border-slate-200 text-slate-600">Direct communication within one team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div id="contact" class="bg-gradient-to-r from-brand-navy to-brand-blue rounded-xl p-8 md:p-12 text-white text-center">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Experience the Difference of Integrated Design & Build</h3>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Let us bridge the gap between your vision and reality. Contact us to discuss how our integrated approach can deliver your project faster, better, and within budget.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919346359659" class="bg-white text-brand-navy font-bold px-8 py-3 rounded hover:bg-slate-100 transition-all duration-300 shadow-lg">
+                        <i class="fa-solid fa-phone mr-2"></i> Call for Consultation
+                    </a>
+                    <a href="mailto:contact@amruthadharainfra.com" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white/10 transition-all duration-300">
+                        <i class="fa-solid fa-envelope mr-2"></i> Email Your Project Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-12 pb-8 border-t-4 border-brand-cyan">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Contact Information</h4>
+                    <div class="space-y-3 text-slate-300 text-sm">
+                        <p><i class="fa-solid fa-location-dot text-brand-cyan mr-2"></i> SKU ATAL INCUBATION CENTER, Ananthapur, Andhra Pradesh</p>
+                        <p><i class="fa-solid fa-phone text-brand-cyan mr-2"></i> +91 9346359659</p>
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> contact@amruthadharainfra.com</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="version9.html#home" class="text-slate-300 hover:text-brand-cyan transition-colors">Home</a></li>
+                        <li><a href="version9.html#services" class="text-slate-300 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="version9.html#projects" class="text-slate-300 hover:text-brand-cyan transition-colors">Projects</a></li>
+                        <li><a href="version9.html#contact" class="text-slate-300 hover:text-brand-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Other Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="general-contracting.html" class="text-slate-300 hover:text-brand-cyan transition-colors">General Contracting</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Infrastructure</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Industrial Construction</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Water Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-6 text-center">
+                <p class="text-slate-500 text-sm">© 2026 Amruthadhara Infra. All Rights Reserved. | <a href="#" class="hover:text-brand-cyan transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-brand-cyan transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight) {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                mobileMenuBtn.querySelector('i').classList.remove('fa-bars-staggered');
+                mobileMenuBtn.querySelector('i').classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

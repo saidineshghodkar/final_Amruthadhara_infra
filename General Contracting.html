@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Contracting Services | Amruthadhara Infra</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Complete construction management services from Amruthadhara Infra - End-to-end project oversight, quality control, and timely delivery.">
+    <meta name="keywords" content="General Contracting, Construction Management, Project Management, Civil Engineering, Hyderabad">
+    <meta name="author" content="Amruthadhara Infra">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#051025',     /* Deepest Blue */
+                            blue: '#0a2558',     /* Primary Blue */
+                            cyan: '#00b4d8',     /* Waterfall Highlight */
+                            light: '#e0f2fe',    /* Light Cyan Tint */
+                            silver: '#e2e8f0',   /* Metallic Light */
+                            metal: '#64748b',    /* Metallic Dark */
+                            chrome: '#f8fafc'    /* Shine */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'waterfall': 'linear-gradient(to right, #00b4d8, #0077b6)',
+                        'hero-overlay': 'linear-gradient(to right, rgba(5, 16, 37, 0.9), rgba(5, 16, 37, 0.4))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 180, 216, 0.15)',
+                        'glow-strong': '0 0 30px rgba(0, 180, 216, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(5, 16, 37, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #051025; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b4d8; }
+
+        .nav-link.active {
+            color: #00b4d8 !important;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        /* Shine Effect for Buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .btn-shine:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+        
+        /* Process Timeline */
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00b4d8, #0a2558);
+        }
+        .step-number {
+            position: absolute;
+            left: -1.25rem;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #0a2558;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #00b4d8;
+        }
+        
+        /* Feature Card Hover */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5 glass-dark">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="version9.html" class="text-2xl font-bold flex items-center gap-3 group z-50">
+                <div class="relative h-10 md:h-12 w-auto transition-transform group-hover:scale-105 duration-300">
+                    <img src="images/logo.png" alt="Amruthadhara Infra Logo" 
+                         class="h-10 md:h-12 w-auto object-contain drop-shadow-md"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hidden h-10 w-10 bg-gradient-to-br from-slate-100 to-slate-300 rounded items-center justify-center text-brand-navy text-xl">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-2xl font-display tracking-tight text-white group-hover:text-brand-cyan transition-colors">Amruthadhara</span>
+                    <span class="text-[8px] md:text-[10px] tracking-[0.3em] text-brand-cyan uppercase font-light group-hover:text-white transition-colors">Infra</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="btn-shine bg-waterfall text-white px-7 py-2.5 rounded-sm hover:shadow-glow-strong transition-all font-semibold text-sm uppercase tracking-wider transform hover:-translate-y-0.5">
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none p-2 hover:text-brand-cyan transition-colors z-50 relative" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden glass-dark border-t border-white/10 overflow-hidden max-h-0 transition-all duration-300 ease-in-out absolute top-full left-0 w-full shadow-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Home</a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Services</a>
+                <a href="version9.html#projects" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Projects</a>
+                <a href="#contact" class="text-brand-cyan font-bold mobile-link block py-4 border border-brand-cyan/30 rounded mt-2 bg-brand-navy/50 active:bg-brand-navy/80">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-medium mb-6 text-brand-cyan shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Our Services
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-display tracking-tight drop-shadow-2xl">
+                    General <span class="text-transparent bg-clip-text bg-waterfall">Contracting</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-6 max-w-2xl mx-auto font-light leading-relaxed">
+                    Complete construction management with end-to-end project oversight
+                </p>
+                <a href="#process" class="inline-flex items-center gap-2 text-white border border-white/30 px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                    <i class="fa-solid fa-arrow-down"></i> Our Process
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-100 py-3 border-b border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm">
+                <a href="version9.html" class="text-slate-500 hover:text-brand-cyan transition-colors"><i class="fa-solid fa-home"></i> Home</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <a href="version9.html#services" class="text-slate-500 hover:text-brand-cyan transition-colors">Services</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <span class="text-brand-navy font-medium">General Contracting</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-20">
+        <div class="container mx-auto px-6">
+            <!-- Intro Section -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+                    End-to-End Construction Management with <span class="text-brand-cyan">Precision</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-8"></div>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    At Amruthadhara Infra, our General Contracting services provide complete oversight of your construction project—from initial planning to final handover. We manage every aspect of site execution, ensuring quality, safety, timelines, and budgets are strictly adhered to.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    With our disciplined, hands-on approach, we bring technical expertise and practical site knowledge to deliver projects that meet the highest standards of construction excellence.
+                </p>
+            </div>
+
+            <!-- Key Services -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our Key Services</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-calendar-check text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Project Planning</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Detailed scheduling, resource allocation, and timeline development for efficient project execution.
+                        </p>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-users-gear text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Site Management</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Skilled labor coordination, subcontractor management, and daily progress monitoring.
+                        </p>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-clipboard-check text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Quality Control</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Rigorous material testing, workmanship checks, and compliance verification at every stage.
+                        </p>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan">
+                            <i class="fa-solid fa-chart-line text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3">Cost Management</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Budget tracking, cost optimization, and transparent financial reporting throughout the project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Process -->
+            <div id="process" class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our 5-Step Process</h3>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">1</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Site Assessment & Planning</h4>
+                        <p class="text-slate-600 mb-4">
+                            We begin with a thorough site visit to understand terrain, accessibility, local conditions, and constraints. This ground-truthing forms the basis of our realistic planning.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Topographic and soil analysis</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Accessibility and logistics planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Regulatory and compliance review</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">2</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Detailed Planning & Scheduling</h4>
+                        <p class="text-slate-600 mb-4">
+                            We create comprehensive project plans with realistic timelines, resource allocation, and milestone tracking. Our planning includes risk assessment and mitigation strategies.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Work breakdown structure development</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Resource and manpower planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Critical path method scheduling</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">3</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Execution & Monitoring</h4>
+                        <p class="text-slate-600 mb-4">
+                            With teams mobilized and resources in place, we execute the plan with daily supervision. We maintain strict quality controls and regular progress reporting.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Daily site supervision and coordination</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Progress tracking against milestones</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Real-time problem solving and adjustments</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">4</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Quality Assurance</h4>
+                        <p class="text-slate-600 mb-4">
+                            Multiple checkpoints ensure material quality and workmanship meet our standards. We conduct regular inspections and testing throughout construction.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Material testing and certification</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Workmanship quality audits</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Safety compliance verification</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Timely Handover</h4>
+                        <p class="text-slate-600 mb-4">
+                            We ensure complete documentation and operational readiness before project handover. Our process includes final inspections, snag lists, and client orientation.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Final inspections and snag resolution</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Complete documentation delivery</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Client orientation and training</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="bg-gradient-to-br from-brand-light to-white rounded-xl p-8 md:p-12 mb-20 border border-slate-200">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Why Choose Our General Contracting Services?</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Left Column -->
+                    <div>
+                        <div class="flex gap-4 mb-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Single Point of Responsibility</h4>
+                                <p class="text-slate-600 text-sm">We take complete ownership of your project, coordinating all aspects and ensuring seamless execution.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 mb-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Site-First Approach</h4>
+                                <p class="text-slate-600 text-sm">Our team visits sites frequently, understanding ground realities and making informed decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div>
+                        <div class="flex gap-4 mb-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Transparent Communication</h4>
+                                <p class="text-slate-600 text-sm">Regular client updates, clear reporting, and open channels for questions and feedback.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Risk Mitigation</h4>
+                                <p class="text-slate-600 text-sm">Proactive identification and management of potential risks to keep your project on track.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Types -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Project Types We Handle</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Type 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Commercial Buildings" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Commercial Buildings</h4>
+                            <p class="text-slate-600 text-sm">Office complexes, retail spaces, hotels, and mixed-use developments.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Industrial Facilities" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Industrial Facilities</h4>
+                            <p class="text-slate-600 text-sm">Factories, warehouses, manufacturing units, and logistics hubs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Type 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Institutional Projects" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Institutional Projects</h4>
+                            <p class="text-slate-600 text-sm">Schools, hospitals, community centers, and government buildings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div id="contact" class="bg-gradient-to-r from-brand-navy to-brand-blue rounded-xl p-8 md:p-12 text-white text-center">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
+                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Let us manage your construction project with the discipline and expertise it deserves. Contact us for a detailed consultation and project assessment.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919346359659" class="bg-white text-brand-navy font-bold px-8 py-3 rounded hover:bg-slate-100 transition-all duration-300 shadow-lg">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Now
+                    </a>
+                    <a href="mailto:contact@amruthadharainfra.com" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white/10 transition-all duration-300">
+                        <i class="fa-solid fa-envelope mr-2"></i> Email Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-12 pb-8 border-t-4 border-brand-cyan">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Contact Information</h4>
+                    <div class="space-y-3 text-slate-300 text-sm">
+                        <p><i class="fa-solid fa-location-dot text-brand-cyan mr-2"></i> SKU ATAL INCUBATION CENTER, Ananthapur, Andhra Pradesh</p>
+                        <p><i class="fa-solid fa-phone text-brand-cyan mr-2"></i> +91 9346359659</p>
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> contact@amruthadharainfra.com</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="version9.html#home" class="text-slate-300 hover:text-brand-cyan transition-colors">Home</a></li>
+                        <li><a href="version9.html#services" class="text-slate-300 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="version9.html#projects" class="text-slate-300 hover:text-brand-cyan transition-colors">Projects</a></li>
+                        <li><a href="version9.html#contact" class="text-slate-300 hover:text-brand-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Other Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Design & Build</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Infrastructure</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Industrial Construction</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Water Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-6 text-center">
+                <p class="text-slate-500 text-sm">© 2026 Amruthadhara Infra. All Rights Reserved. | <a href="#" class="hover:text-brand-cyan transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-brand-cyan transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight) {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                mobileMenuBtn.querySelector('i').classList.remove('fa-bars-staggered');
+                mobileMenuBtn.querySelector('i').classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

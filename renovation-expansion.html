@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovation & Expansion Services | Amruthadhara Infra</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional renovation and expansion services that modernize existing structures while maintaining structural integrity with minimal disruption.">
+    <meta name="keywords" content="Renovation, Expansion, Building Renovation, Structural Upgrades, Building Expansion, Interior Renovation">
+    <meta name="author" content="Amruthadhara Infra">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#051025',     /* Deepest Blue */
+                            blue: '#0a2558',     /* Primary Blue */
+                            cyan: '#00b4d8',     /* Waterfall Highlight */
+                            light: '#e0f2fe',    /* Light Cyan Tint */
+                            silver: '#e2e8f0',   /* Metallic Light */
+                            metal: '#64748b',    /* Metallic Dark */
+                            chrome: '#f8fafc'    /* Shine */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'waterfall': 'linear-gradient(to right, #00b4d8, #0077b6)',
+                        'hero-overlay': 'linear-gradient(to right, rgba(5, 16, 37, 0.9), rgba(5, 16, 37, 0.4))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 180, 216, 0.15)',
+                        'glow-strong': '0 0 30px rgba(0, 180, 216, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(5, 16, 37, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #051025; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b4d8; }
+
+        .nav-link.active {
+            color: #00b4d8 !important;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        /* Shine Effect for Buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .btn-shine:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+        
+        /* Process Timeline */
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00b4d8, #0a2558);
+        }
+        .step-number {
+            position: absolute;
+            left: -1.25rem;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #0a2558;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #00b4d8;
+        }
+        
+        /* Feature Card Hover */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+        }
+        
+        /* Renovation Specific */
+        .renovation-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00b4d8, #0a2558);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Before-After Effect */
+        .before-after-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            height: 300px;
+        }
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            border-right: 3px solid #00b4d8;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #00b4d8;
+            z-index: 3;
+            cursor: col-resize;
+            transform: translateX(-50%);
+        }
+        .slider-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #00b4d8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+        .slider-handle::before {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            z-index: 4;
+        }
+        
+        /* Expansion Animation */
+        .expansion-grow {
+            animation: grow 2s ease-in-out infinite alternate;
+        }
+        @keyframes grow {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5 glass-dark">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="version9.html" class="text-2xl font-bold flex items-center gap-3 group z-50">
+                <div class="relative h-10 md:h-12 w-auto transition-transform group-hover:scale-105 duration-300">
+                    <img src="images/logo.png" alt="Amruthadhara Infra Logo" 
+                         class="h-10 md:h-12 w-auto object-contain drop-shadow-md"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hidden h-10 w-10 bg-gradient-to-br from-slate-100 to-slate-300 rounded items-center justify-center text-brand-navy text-xl">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-2xl font-display tracking-tight text-white group-hover:text-brand-cyan transition-colors">Amruthadhara</span>
+                    <span class="text-[8px] md:text-[10px] tracking-[0.3em] text-brand-cyan uppercase font-light group-hover:text-white transition-colors">Infra</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="btn-shine bg-waterfall text-white px-7 py-2.5 rounded-sm hover:shadow-glow-strong transition-all font-semibold text-sm uppercase tracking-wider transform hover:-translate-y-0.5">
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none p-2 hover:text-brand-cyan transition-colors z-50 relative" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden glass-dark border-t border-white/10 overflow-hidden max-h-0 transition-all duration-300 ease-in-out absolute top-full left-0 w-full shadow-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Home</a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Services</a>
+                <a href="version9.html#projects" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Projects</a>
+                <a href="#contact" class="text-brand-cyan font-bold mobile-link block py-4 border border-brand-cyan/30 rounded mt-2 bg-brand-navy/50 active:bg-brand-navy/80">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50"></div>
+        <!-- Construction Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: 
+            linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%, rgba(255,255,255,0.1));
+            background-size: 40px 40px;">
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-medium mb-6 text-brand-cyan shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Transforming Existing Structures
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-display tracking-tight drop-shadow-2xl">
+                    Interiors <span class="text-transparent bg-clip-text bg-waterfall">& Renovation</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-6 max-w-2xl mx-auto font-light leading-relaxed">
+                    Modernizing existing structures while maintaining structural integrity with minimal disruption
+                </p>
+                <a href="#approach" class="inline-flex items-center gap-2 text-white border border-white/30 px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                    <i class="fa-solid fa-arrow-down"></i> Our Approach
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-100 py-3 border-b border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm">
+                <a href="version9.html" class="text-slate-500 hover:text-brand-cyan transition-colors"><i class="fa-solid fa-home"></i> Home</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <a href="version9.html#services" class="text-slate-500 hover:text-brand-cyan transition-colors">Services</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <span class="text-brand-navy font-medium"> interiors and Renovation</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-20">
+        <div class="container mx-auto px-6">
+            <!-- Intro Section -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+                    Transforming Existing Structures with <span class="text-brand-cyan">Minimal Disruption</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-8"></div>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Renovation and expansion require a different skill set than new construction. We specialize in upgrading, retrofitting, and extending existing buildings while maintaining structural integrity and minimizing operational disruption.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Our approach combines careful structural assessment with innovative design to breathe new life into existing buildings, extending their lifespan and enhancing their functionality.
+                </p>
+            </div>
+
+            <!-- Before-After Demo -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Transformation In Action</h3>
+                
+                <div class="max-w-4xl mx-auto mb-8">
+                    <div class="before-after-card">
+                        <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Before Renovation" 
+                             class="before-image">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="After Renovation" 
+                             class="after-image" id="after-image">
+                        <div class="slider-handle" id="slider-handle"></div>
+                    </div>
+                    <div class="flex justify-between mt-4 text-sm text-slate-600">
+                        <span class="font-medium">Before Renovation</span>
+                        <span class="font-medium">After Renovation</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-slate-600 mb-4">Slide the handle to see the transformation</p>
+                    <div class="inline-flex items-center gap-3 px-4 py-2 bg-brand-light border border-brand-cyan/20 rounded-full">
+                        <i class="fa-solid fa-lightbulb text-brand-cyan"></i>
+                        <span class="text-sm text-brand-blue">Average renovation increases property value by 20-30%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Services -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our Renovation & Expansion Services</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Service 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Structural Renovation</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Strengthening and upgrading existing structural elements to meet current standards and requirements.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Foundation strengthening and repairs</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Column and beam reinforcement</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Load-bearing wall modifications</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Vertical & Horizontal Expansion</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Adding new floors or extending existing spaces while ensuring structural compatibility.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Additional floor construction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Building extensions and annexes</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Balcony and terrace additions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Interior Modernization</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Complete interior overhauls that transform spaces while respecting existing structural elements.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Space reconfiguration and layout changes</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Modern finishes and fixtures</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Acoustic and thermal upgrades</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Facade & Exterior Upgrades</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Enhancing building exteriors with modern materials and energy-efficient solutions.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Facade recladding and insulation</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Window and door replacements</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Waterproofing and weatherproofing</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Utility System Upgrades</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Modernizing electrical, plumbing, HVAC, and other utility systems in existing buildings.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Electrical system rewiring</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Plumbing and sanitation upgrades</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>HVAC system modernization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="renovation-icon mx-auto">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Accessibility & Compliance</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Making buildings accessible and compliant with current building codes and regulations.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>ADA compliance modifications</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Fire safety system upgrades</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Seismic retrofitting</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Approach -->
+            <div id="approach" class="bg-gradient-to-br from-brand-light to-white rounded-xl p-8 md:p-12 mb-20 border border-brand-cyan/20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Our Careful Approach to Renovation</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Left Column -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Thorough Assessment</h4>
+                                <p class="text-slate-600 text-sm">We conduct detailed structural assessments before any work begins, understanding the original construction methodology.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Minimal Disruption</h4>
+                                <p class="text-slate-600 text-sm">Our phased approach ensures that building operations can continue with minimal interruption during renovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-helmet-safety"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Safety First</h4>
+                                <p class="text-slate-600 text-sm">Renovation work involves unique safety challenges that we address with specialized protocols and equipment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Respect for Existing Structure</h4>
+                                <p class="text-slate-600 text-sm">We design interventions that respect the original building while introducing modern improvements and upgrades.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Process -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our 6-Step Renovation Process</h3>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">1</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Initial Assessment & Feasibility Study</h4>
+                        <p class="text-slate-600 mb-4">
+                            Comprehensive evaluation of the existing structure to understand its condition, limitations, and renovation potential.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Structural integrity assessment</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Utility system evaluation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Regulatory compliance review</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">2</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Design & Planning Phase</h4>
+                        <p class="text-slate-600 mb-4">
+                            Developing renovation designs that work with the existing structure while achieving modern functionality and aesthetics.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Architectural redesign within existing constraints</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Structural engineering for modifications</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Phasing plan for minimal disruption</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">3</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Preparatory Work & Demolition</h4>
+                        <p class="text-slate-600 mb-4">
+                            Careful demolition and preparation work that preserves structural elements while removing outdated components.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Selective demolition with structural protection</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Temporary support systems installation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Hazardous material abatement if required</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">4</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Structural Modifications & Reinforcement</h4>
+                        <p class="text-slate-600 mb-4">
+                            Implementing structural changes with precision to ensure safety and compliance with current standards.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Foundation and structural strengthening</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>New structural element integration</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Expansion joint installation if needed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">5</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">New Construction & Integration</h4>
+                        <p class="text-slate-600 mb-4">
+                            Building new elements that seamlessly integrate with the existing structure while implementing modern systems.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>New construction in expansion areas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Utility system upgrades and integration</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Finishes that bridge old and new</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Finishing & Commissioning</h4>
+                        <p class="text-slate-600 mb-4">
+                            Final touches, testing, and handover of the renovated space with all systems operational.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Final finishes and detailing</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>System testing and commissioning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Final inspection and client orientation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Types -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Types of Renovation Projects</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Residential -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Residential Renovation" 
+                                 class="w-full h-full object-cover expansion-grow">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                <h4 class="text-white text-xl font-bold">Residential Renovation</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Transforming homes, apartments, and residential buildings with modern amenities while preserving character.</p>
+                            <ul class="space-y-2 text-slate-600 text-xs">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Kitchen and bathroom remodels</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Room additions and expansions</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Whole-house renovations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Commercial -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Commercial Renovation" 
+                                 class="w-full h-full object-cover expansion-grow">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                <h4 class="text-white text-xl font-bold">Commercial Renovation</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Updating office spaces, retail stores, and commercial buildings to meet modern business needs.</p>
+                            <ul class="space-y-2 text-slate-600 text-xs">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Office space modernization</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Retail store facelifts</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Restaurant and hospitality upgrades</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Institutional -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Institutional Renovation" 
+                                 class="w-full h-full object-cover expansion-grow">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                <h4 class="text-white text-xl font-bold">Institutional Renovation</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Modernizing schools, hospitals, and government buildings while maintaining continuous operations.</p>
+                            <ul class="space-y-2 text-slate-600 text-xs">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Educational facility upgrades</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Healthcare facility modernization</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Heritage building restoration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Industrial -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Industrial Renovation" 
+                                 class="w-full h-full object-cover expansion-grow">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                <h4 class="text-white text-xl font-bold">Industrial Renovation</h4>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Upgrading factories, warehouses, and industrial facilities for improved efficiency and safety.</p>
+                            <ul class="space-y-2 text-slate-600 text-xs">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Factory modernization</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Warehouse expansions</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                    <span>Industrial facility retrofitting</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="bg-gradient-to-r from-brand-navy to-brand-blue rounded-xl p-8 md:p-12 mb-20 text-white">
+                <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Benefits of Renovation vs. New Construction</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Benefit 1 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-indian-rupee-sign text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Cost-Effective</h4>
+                        <p class="text-slate-300 text-sm">Renovation typically costs 30-50% less than building new while achieving similar functional improvements.</p>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-clock text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Faster Timeline</h4>
+                        <p class="text-slate-300 text-sm">Renovation projects can be completed in significantly less time compared to new construction.</p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Sustainability</h4>
+                        <p class="text-slate-300 text-sm">Renovation reduces waste and preserves existing materials, making it an environmentally friendly choice.</p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-building-circle-check text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Preserves Character</h4>
+                        <p class="text-slate-300 text-sm">Maintains the unique character and history of existing buildings while adding modern functionality.</p>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-truck-fast text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Minimal Disruption</h4>
+                        <p class="text-slate-300 text-sm">Phased renovation allows continued use of the building during construction, reducing operational impact.</p>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-cyan mb-4">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Increased Value</h4>
+                        <p class="text-slate-300 text-sm">Well-executed renovation can increase property value by 20-30% or more, providing excellent ROI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div id="contact" class="bg-gradient-to-r from-brand-cyan to-brand-blue rounded-xl p-8 md:p-12 text-white text-center">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Breathe New Life Into Your Existing Building</h3>
+                <p class="text-slate-200 mb-8 max-w-2xl mx-auto">
+                    Whether you need to modernize an outdated space, expand your facility, or restore a heritage building, we have the expertise to deliver exceptional results with minimal disruption. Contact us for a consultation on your renovation project.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919346359659" class="bg-white text-brand-navy font-bold px-8 py-3 rounded hover:bg-slate-100 transition-all duration-300 shadow-lg">
+                        <i class="fa-solid fa-phone mr-2"></i> Schedule Assessment
+                    </a>
+                    <a href="mailto:contact@amruthadharainfra.com" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white/10 transition-all duration-300">
+                        <i class="fa-solid fa-envelope mr-2"></i> Send Project Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-12 pb-8 border-t-4 border-brand-cyan">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Contact Information</h4>
+                    <div class="space-y-3 text-slate-300 text-sm">
+                        <p><i class="fa-solid fa-location-dot text-brand-cyan mr-2"></i> SKU ATAL INCUBATION CENTER, Ananthapur, Andhra Pradesh</p>
+                        <p><i class="fa-solid fa-phone text-brand-cyan mr-2"></i> +91 9346359659</p>
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> contact@amruthadharainfra.com</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="version9.html#home" class="text-slate-300 hover:text-brand-cyan transition-colors">Home</a></li>
+                        <li><a href="version9.html#services" class="text-slate-300 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="version9.html#projects" class="text-slate-300 hover:text-brand-cyan transition-colors">Projects</a></li>
+                        <li><a href="version9.html#contact" class="text-slate-300 hover:text-brand-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Other Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="general-contracting.html" class="text-slate-300 hover:text-brand-cyan transition-colors">General Contracting</a></li>
+                        <li><a href="design-build.html" class="text-slate-300 hover:text-brand-cyan transition-colors">Design & Build</a></li>
+                        <li><a href="infrastructure.html" class="text-slate-300 hover:text-brand-cyan transition-colors">Infrastructure</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-brand-cyan transition-colors">Water Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-6 text-center">
+                <p class="text-slate-500 text-sm">© 2026 Amruthadhara Infra. All Rights Reserved. | <a href="#" class="hover:text-brand-cyan transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-brand-cyan transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight) {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                mobileMenuBtn.querySelector('i').classList.remove('fa-bars-staggered');
+                mobileMenuBtn.querySelector('i').classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Before-After Slider
+        const afterImage = document.getElementById('after-image');
+        const sliderHandle = document.getElementById('slider-handle');
+        let isDragging = false;
+
+        sliderHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            document.addEventListener('mousemove', handleMove);
+            document.addEventListener('mouseup', stopDrag);
+        });
+
+        sliderHandle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            document.addEventListener('touchmove', handleMoveTouch);
+            document.addEventListener('touchend', stopDrag);
+        });
+
+        function handleMove(e) {
+            if (!isDragging) return;
+            updateSlider(e.clientX);
+        }
+
+        function handleMoveTouch(e) {
+            if (!isDragging) return;
+            updateSlider(e.touches[0].clientX);
+        }
+
+        function updateSlider(clientX) {
+            const container = afterImage.parentElement;
+            const rect = container.getBoundingClientRect();
+            let percentage = (clientX - rect.left) / rect.width;
+            percentage = Math.max(0, Math.min(1, percentage));
+            
+            afterImage.style.width = (percentage * 100) + '%';
+            sliderHandle.style.left = (percentage * 100) + '%';
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', handleMove);
+            document.removeEventListener('touchmove', handleMoveTouch);
+        }
+
+        // Initialize slider at 50%
+        afterImage.style.width = '50%';
+        sliderHandle.style.left = '50%';
+    </script>
+</body>
+</html>

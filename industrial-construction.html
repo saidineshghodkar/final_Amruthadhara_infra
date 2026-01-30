@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Construction Services | Amruthadhara Infra</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Specialized industrial construction services including factories, warehouses, manufacturing units, and processing plants designed for productivity, safety, and efficiency.">
+    <meta name="keywords" content="Industrial Construction, Factory Construction, Warehouse Building, Manufacturing Plants, Industrial Facilities, Processing Units">
+    <meta name="author" content="Amruthadhara Infra">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#051025',     /* Deepest Blue */
+                            blue: '#0a2558',     /* Primary Blue */
+                            cyan: '#00b4d8',     /* Waterfall Highlight */
+                            light: '#e0f2fe',    /* Light Cyan Tint */
+                            silver: '#e2e8f0',   /* Metallic Light */
+                            metal: '#64748b',    /* Metallic Dark */
+                            chrome: '#f8fafc'    /* Shine */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'waterfall': 'linear-gradient(to right, #00b4d8, #0077b6)',
+                        'hero-overlay': 'linear-gradient(to right, rgba(5, 16, 37, 0.9), rgba(5, 16, 37, 0.4))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 180, 216, 0.15)',
+                        'glow-strong': '0 0 30px rgba(0, 180, 216, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(5, 16, 37, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #051025; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b4d8; }
+
+        .nav-link.active {
+            color: #00b4d8 !important;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        /* Shine Effect for Buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .btn-shine:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+        
+        /* Process Timeline */
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00b4d8, #0a2558);
+        }
+        .step-number {
+            position: absolute;
+            left: -1.25rem;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #0a2558;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #00b4d8;
+        }
+        
+        /* Feature Card Hover */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 180, 216, 0.1);
+        }
+        
+        /* Industrial Specific */
+        .industrial-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00b4d8, #0a2558);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Conveyor Animation */
+        .conveyor-line {
+            height: 4px;
+            background: linear-gradient(90deg, #64748b, #00b4d8, #64748b);
+            position: relative;
+            overflow: hidden;
+        }
+        .conveyor-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            animation: conveyorFlow 2s linear infinite;
+        }
+        @keyframes conveyorFlow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Gear Rotation */
+        .gear-rotate {
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Factory Pattern Background */
+        .factory-pattern {
+            background-image: 
+                linear-gradient(45deg, transparent 45%, rgba(0, 180, 216, 0.05) 45%, rgba(0, 180, 216, 0.05) 55%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(0, 180, 216, 0.05) 45%, rgba(0, 180, 216, 0.05) 55%, transparent 55%);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5 glass-dark">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="version9.html" class="text-2xl font-bold flex items-center gap-3 group z-50">
+                <div class="relative h-10 md:h-12 w-auto transition-transform group-hover:scale-105 duration-300">
+                    <img src="images/logo.png" alt="Amruthadhara Infra Logo" 
+                         class="h-10 md:h-12 w-auto object-contain drop-shadow-md"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="hidden h-10 w-10 bg-gradient-to-br from-slate-100 to-slate-300 rounded items-center justify-center text-brand-navy text-xl">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-2xl font-display tracking-tight text-white group-hover:text-brand-cyan transition-colors">Amruthadhara</span>
+                    <span class="text-[8px] md:text-[10px] tracking-[0.3em] text-brand-cyan uppercase font-light group-hover:text-white transition-colors">Infra</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="btn-shine bg-waterfall text-white px-7 py-2.5 rounded-sm hover:shadow-glow-strong transition-all font-semibold text-sm uppercase tracking-wider transform hover:-translate-y-0.5">
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none p-2 hover:text-brand-cyan transition-colors z-50 relative" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden glass-dark border-t border-white/10 overflow-hidden max-h-0 transition-all duration-300 ease-in-out absolute top-full left-0 w-full shadow-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center">
+                <a href="version9.html#home" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Home</a>
+                <a href="version9.html#services" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Services</a>
+                <a href="version9.html#projects" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-3 border-b border-white/5">Projects</a>
+                <a href="#contact" class="text-brand-cyan font-bold mobile-link block py-4 border border-brand-cyan/30 rounded mt-2 bg-brand-navy/50 active:bg-brand-navy/80">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-brand-navy/50"></div>
+        <!-- Factory Pattern -->
+        <div class="absolute inset-0 factory-pattern opacity-10"></div>
+        <!-- Conveyor Animation -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 conveyor-line"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-medium mb-6 text-brand-cyan shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Industrial Excellence
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-display tracking-tight drop-shadow-2xl">
+                    <span class="text-transparent bg-clip-text bg-waterfall">Industrial</span> Construction
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-6 max-w-2xl mx-auto font-light leading-relaxed">
+                    Building for productivity, safety, and operational efficiency in manufacturing and industrial facilities
+                </p>
+                <a href="#specializations" class="inline-flex items-center gap-2 text-white border border-white/30 px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                    <i class="fa-solid fa-arrow-down"></i> Our Specializations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-100 py-3 border-b border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm">
+                <a href="version7.html" class="text-slate-500 hover:text-brand-cyan transition-colors"><i class="fa-solid fa-home"></i> Home</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <a href="version7.html#services" class="text-slate-500 hover:text-brand-cyan transition-colors">Services</a>
+                <span class="text-slate-400"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                <span class="text-brand-navy font-medium">Industrial Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12 md:py-20">
+        <div class="container mx-auto px-6">
+            <!-- Intro Section -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+                    Building for <span class="text-brand-cyan">Productivity, Safety, and Efficiency</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-8"></div>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Industrial facilities require specialized construction expertise. We understand the unique demands of manufacturing units, warehouses, processing plants, and logistics hubs—and build structures that optimize operations while ensuring safety and durability.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Our industrial construction approach combines technical engineering with practical workflow understanding to create facilities that support your business growth and operational excellence.
+                </p>
+            </div>
+
+            <!-- Key Features -->
+            <div id="specializations" class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our Industrial Construction Specializations</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Specialization 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Manufacturing Plants</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Complete manufacturing facilities designed for efficient production workflows and optimized material handling.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Assembly line optimization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Clean room construction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Production area layout</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Specialization 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Warehouses & Logistics</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Storage and distribution facilities designed for maximum space utilization and efficient material flow.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>High-bay storage systems</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Loading dock optimization</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Inventory management layout</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Specialization 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-temperature-low"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Cold Storage Facilities</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Temperature-controlled storage and processing units for perishable goods and pharmaceuticals.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Insulated panel construction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Refrigeration system integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Temperature zoning</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Specialization 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Processing Units</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Specialized facilities for food processing, chemical processing, and material transformation.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Hygienic surface finishes</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Process piping integration</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Waste management systems</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Specialization 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-truck-loading"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Logistics Hubs</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    Distribution centers and transportation hubs designed for seamless cargo movement and handling.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Vehicle maneuvering areas</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Cross-docking facilities</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Sortation systems integration</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Specialization 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card border-t-4 border-brand-cyan">
+                        <div class="industrial-icon mx-auto">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Industrial Workshops</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Maintenance facilities, repair shops, and fabrication units with specialized infrastructure needs.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-xs">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Heavy equipment foundations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Crane and hoist installations</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle text-[6px] text-brand-cyan"></i>
+                                <span>Ventilation and exhaust systems</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Industrial Features -->
+            <div class="bg-gradient-to-br from-brand-light to-white rounded-xl p-8 md:p-12 mb-20 border border-slate-200">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Key Features of Our Industrial Projects</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Left Column -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Clear Span Structures</h4>
+                                <p class="text-slate-600 text-sm">Maximizing usable space with column-free interiors for flexible layout configurations and efficient material movement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-weight-hanging"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Heavy-Duty Flooring</h4>
+                                <p class="text-slate-600 text-sm">Industrial-grade concrete with appropriate load ratings, surface finishes, and chemical resistance for specific applications.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Material Flow Optimization</h4>
+                                <p class="text-slate-600 text-sm">Strategic placement of doors, ramps, internal layouts, and material handling systems to minimize movement and maximize efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Utility Integration</h4>
+                                <p class="text-slate-600 text-sm">Seamless incorporation of electrical, plumbing, compressed air, process piping, and specialized industrial systems.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Safety Compliance</h4>
+                                <p class="text-slate-600 text-sm">Fire safety systems, ventilation, emergency exits, hazard zoning, and compliance with industrial safety regulations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-cyan rounded-lg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-navy mb-2">Future Expansion</h4>
+                                <p class="text-slate-600 text-sm">Designs that allow for easy capacity upgrades, technology integration, and phased expansion as business grows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Process -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Our Industrial Construction Process</h3>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">1</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Workflow Analysis & Planning</h4>
+                        <p class="text-slate-600 mb-4">
+                            Understanding your production processes, material flows, and operational requirements to design facilities that optimize efficiency.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Production process mapping</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Material handling system design</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Equipment layout and spacing requirements</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">2</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Specialized Design & Engineering</h4>
+                        <p class="text-slate-600 mb-4">
+                            Creating industrial-specific designs that address unique requirements such as heavy loads, vibration control, and specialized utilities.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Structural design for heavy equipment loads</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Industrial utility system planning</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Safety and compliance engineering</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">3</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Construction with Industrial Protocols</h4>
+                        <p class="text-slate-600 mb-4">
+                            Implementing construction methods specifically tailored for industrial facilities with precision and quality control.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Heavy foundation construction</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Pre-engineered building systems</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Specialized utility installations</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-step mb-12">
+                        <div class="step-number">4</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Equipment Integration & Commissioning</h4>
+                        <p class="text-slate-600 mb-4">
+                            Coordinating with equipment suppliers and integrating machinery with building systems for seamless operation.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Equipment foundation and anchoring</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Utility connection and testing</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>System integration and commissioning</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4 class="text-xl font-bold text-brand-navy mb-3">Operational Readiness & Handover</h4>
+                        <p class="text-slate-600 mb-4">
+                            Ensuring the facility is ready for production with all systems tested, staff trained, and documentation complete.
+                        </p>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Operational testing and validation</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Safety system certification</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-cyan mt-1"></i>
+                                <span>Operator training and documentation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Integration -->
+            <div class="mb-20">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-10 text-center">Technology & Innovation in Industrial Construction</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tech 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-robot text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Automation Integration</h4>
+                        <p class="text-slate-600 text-sm text-center">Designing facilities ready for automated systems, robotics, and smart manufacturing technologies.</p>
+                    </div>
+                    
+                    <!-- Tech 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-solar-panel text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Energy Efficiency</h4>
+                        <p class="text-slate-600 text-sm text-center">Implementing energy-saving systems, natural lighting, and renewable energy integration for cost-effective operations.</p>
+                    </div>
+                    
+                    <!-- Tech 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-water text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Sustainable Practices</h4>
+                        <p class="text-slate-600 text-sm text-center">Water recycling systems, waste management, and environmentally responsible construction methods.</p>
+                    </div>
+                    
+                    <!-- Tech 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-computer text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Digital Twin Technology</h4>
+                        <p class="text-slate-600 text-sm text-center">Creating digital replicas of facilities for simulation, optimization, and maintenance planning.</p>
+                    </div>
+                    
+                    <!-- Tech 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-satellite-dish text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">IoT Readiness</h4>
+                        <p class="text-slate-600 text-sm text-center">Infrastructure designed for Internet of Things integration for monitoring, control, and data collection.</p>
+                    </div>
+                    
+                    <!-- Tech 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md feature-card">
+                        <div class="w-14 h-14 bg-gradient-to-br from-brand-light to-white border border-brand-cyan/20 rounded-lg flex items-center justify-center mb-4 text-brand-cyan mx-auto">
+                            <i class="fa-solid fa-recycle text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-navy mb-3 text-center">Circular Economy</h4>
+                        <p class="text-slate-600 text-sm text-center">Designing for material reuse, recycling, and sustainable lifecycle management.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industries Served -->
+            <div class="bg-gradient-to-r from-brand-navy to-brand-blue rounded-xl p-8 md:p-12 mb-20 text-white">
+                <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Industries We Serve</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Industry 1 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-car text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Automotive & Auto Components</h4>
+                        <p class="text-slate-300 text-sm text-center">Assembly plants, parts manufacturing facilities, testing centers, and R&D labs.</p>
+                    </div>
+                    
+                    <!-- Industry 2 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-pills text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Pharmaceuticals & Healthcare</h4>
+                        <p class="text-slate-300 text-sm text-center">GMP compliant manufacturing units, clean rooms, research facilities, and packaging plants.</p>
+                    </div>
+                    
+                    <!-- Industry 3 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-utensils text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Food & Beverage Processing</h4>
+                        <p class="text-slate-300 text-sm text-center">Processing plants, packaging facilities, cold storage, and distribution centers.</p>
+                    </div>
+                    
+                    <!-- Industry 4 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-box text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Logistics & E-commerce</h4>
+                        <p class="text-slate-300 text-sm text-center">Distribution hubs, fulfillment centers, sorting facilities, and last-mile delivery stations.</p>
+                    </div>
+                    
+                    <!-- Industry 5 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-microchip text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Electronics & Technology</h4>
+                        <p class="text-slate-300 text-sm text-center">Component manufacturing, assembly units, testing facilities, and technology parks.</p>
+                    </div>
+                    
+                    <!-- Industry 6 -->
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-navy mb-4 mx-auto">
+                            <i class="fa-solid fa-tractor text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2 text-center">Agriculture & Agro-processing</h4>
+                        <p class="text-slate-300 text-sm text-center">Processing plants, storage facilities, packaging units, and agricultural equipment workshops.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Value Addition -->
+            <div class="bg-gradient-to-br from-brand-light to-white rounded-xl p-8 md:p-12 mb-20 border border-slate-200">
+                <h3 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Our Value Addition to Industrial Projects</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Value 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Understanding Production Workflows</h4>
+                            <p class="text-slate-600 text-sm">We study your manufacturing processes to design facilities that enhance productivity and reduce operational bottlenecks.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Knowledge of Industry Regulations</h4>
+                            <p class="text-slate-600 text-sm">Familiarity with industry-specific regulations, safety standards, and compliance requirements ensures your facility meets all legal requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-3"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Experience with Specialized Equipment</h4>
+                            <p class="text-slate-600 text-sm">Understanding foundation requirements, utility connections, and installation procedures for various industrial machinery and equipment.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-brand-cyan rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-4"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-brand-navy mb-2">Coordination with Machinery Suppliers</h4>
+                            <p class="text-slate-600 text-sm">Seamless coordination with equipment suppliers for proper installation, integration, and commissioning of production machinery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div id="contact" class="bg-gradient-to-r from-brand-cyan to-brand-blue rounded-xl p-8 md:p-12 text-white text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-navy gear-rotate">
+                        <i class="fa-solid fa-gears text-3xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Build an Industrial Facility That Works as Hard as Your Business</h3>
+                <p class="text-slate-200 mb-8 max-w-2xl mx-auto">
+                    Whether you're expanding existing operations or building a new manufacturing facility, we have the expertise to deliver industrial construction that supports your growth, efficiency, and long-term success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919346359659" class="bg-white text-brand-navy font-bold px-8 py-3 rounded hover:bg-slate-100 transition-all duration-300 shadow-lg">
+                        <i class="fa-solid fa-phone mr-2"></i> Discuss Your Industrial Project
+                    </a>
+                    <a href="mailto:contact@amruthadharainfra.com" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white/10 transition-all duration-300">
+                        <i class="fa-solid fa-envelope mr-2"></i> Email Facility Requirements
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-12 pb-8 border-t-4 border-brand-cyan">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Contact Information</h4>
+                    <div class="space-y-3 text-slate-300 text-sm">
+                        <p><i class="fa-solid fa-location-dot text-brand-cyan mr-2"></i> SKU ATAL INCUBATION CENTER, Ananthapur, Andhra Pradesh</p>
+                        <p><i class="fa-solid fa-phone text-brand-cyan mr-2"></i> +91 9346359659</p>
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> contact@amruthadharainfra.com</p>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="version9.html#home" class="text-slate-300 hover:text-brand-cyan transition-colors">Home</a></li>
+                        <li><a href="version9.html#services" class="text-slate-300 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="version9.html#projects" class="text-slate-300 hover:text-brand-cyan transition-colors">Projects</a></li>
+                        <li><a href="version9.html#contact" class="text-slate-300 hover:text-brand-cyan transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Other Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Our Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="general-contracting.html" class="text-slate-300 hover:text-brand-cyan transition-colors">General Contracting</a></li>
+                        <li><a href="design-build.html" class="text-slate-300 hover:text-brand-cyan transition-colors">Design & Build</a></li>
+                        <li><a href="infrastructure.html" class="text-slate-300 hover:text-brand-cyan transition-colors">Infrastructure</a></li>
+                        <li><a href="renovation-expansion.html" class="text-slate-300 hover:text-brand-cyan transition-colors">Renovation & Expansion</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-6 text-center">
+                <p class="text-slate-500 text-sm">© 2026 Amruthadhara Infra. All Rights Reserved. | <a href="#" class="hover:text-brand-cyan transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-brand-cyan transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight) {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                mobileMenuBtn.querySelector('i').classList.remove('fa-bars-staggered');
+                mobileMenuBtn.querySelector('i').classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
